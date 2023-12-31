@@ -75,7 +75,7 @@ if args["image"] is not None:
 else:
     # Jika tidak, mulai aliran video
     print("[INFO] Memulai aliran video...")
-    vs = VideoStream(src=2).start()
+    vs = VideoStream(src=0).start()
     time.sleep(2.0)
 
 # Variabel untuk melacak deteksi Udin
