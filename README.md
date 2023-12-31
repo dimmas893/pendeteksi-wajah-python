@@ -8,4 +8,4 @@ python recognize_gambar.py --detector face_detection_model --embedding-model ope
 
 camera : saya pakai camera exsternal
 
-<img src="gambar.png" width="100%">
+<img src="./gambar.png" width="100%">
