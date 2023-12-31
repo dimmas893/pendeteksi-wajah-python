@@ -1,0 +1,24 @@
+import cv2
+
+
+def list_available_cameras():
+    num_cameras = 0
+    camera_info = []
+    while True:
+        cap = cv2.VideoCapture(num_cameras)
+        if not cap.read()[0]:
+            break
+        cap.release()
+        camera_info.append((num_cameras, cap.get(cv2.CAP_PROP_FPS)))
+        num_cameras += 1
+    return camera_info
+
+
+if __name__ == "__main__":
+    camera_info = list_available_cameras()
+    if camera_info:
+        print("Informasi Kamera yang Terdeteksi:")
+        for idx, fps in camera_info:
+            print(f"  - Kamera {idx}: {fps} FPS")
+    else:
+        print("Tidak ada kamera yang terdeteksi.")
